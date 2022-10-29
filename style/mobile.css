@@ -1,0 +1,135 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'Vazir';
+  src: url("/font/Vazir.eot"), url("/font/Vazir.woff") format("woff"); }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background: #edf7f2;
+  font-family: 'Vazir'; }
+
+html {
+  scroll-behavior: smooth; }
+
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  position: fixed;
+  margin: 0; }
+  .hamburger-menu .bar,
+  .hamburger-menu ::after,
+  .hamburger-menu ::before {
+    content: "";
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    transition: all .5s;
+    border-radius: 3px;
+    position: absolute; }
+  .hamburger-menu .bar::before {
+    top: -10px; }
+  .hamburger-menu .bar::after {
+    top: 10px; }
+
+@media screen and (max-width: 768px) {
+  .men {
+    height: 100vh; }
+
+  .maharat-men {
+    height: 100vh; }
+
+  .header-meno {
+    height: 10%; }
+
+  .hamburger-menu {
+    display: flex;
+    z-index: 999; }
+
+  .hamburger-open .bar {
+    background: transparent; }
+  .hamburger-open .bar::after {
+    top: 0;
+    transform: rotate(45deg); }
+  .hamburger-open .bar::before {
+    top: 0;
+    transform: rotate(-45deg); }
+
+  nav {
+    position: fixed;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: #20C5BA;
+    transform: translateX(100%);
+    transition: all .5s ease-in; }
+    nav ul {
+      height: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+      flex-direction: column;
+      position: absolute;
+      top: 10px; }
+      nav ul li {
+        text-align: center;
+        padding-top: 2rem;
+        width: 70%; }
+        nav ul li a {
+          margin-bottom: 5px; }
+          nav ul li a:hover {
+            background: #0B3A42 !important; }
+    nav .logo {
+      position: absolute;
+      left: 10px;
+      top: 20px; }
+
+  .openmeno {
+    transform: translateX(0); }
+
+  .heade-icon {
+    position: fixed;
+    left: 0;
+    top: 1.5rem; }
+
+  #about-men {
+    display: flex;
+    flex-direction: column-reverse; }
+
+  .profile-men {
+    margin-top: 25%; }
+
+  /*مهارت ها*/
+  .laptap {
+    margin-top: 20px; }
+
+  /*نمونه کارها*/
+  .job {
+    padding: 2rem; }
+
+  /*شمارنده*/
+  .counter-item {
+    margin-top: 20px; }
+
+  /*درباره من*/
+  .paragraf-men, .profile-men {
+    margin-top: 3.5rem; }
+
+  .number {
+    display: none; }
+
+  .atue p {
+    text-align: start !important; }
+
+  /*پایان*/
+  .email-me {
+    text-align: center; } }
+
+/*# sourceMappingURL=mobile.css.map */
