@@ -1,0 +1,13 @@
+@mixin overal {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+@mixin textstyle($size, $weight, $color ) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+   
+    
+}

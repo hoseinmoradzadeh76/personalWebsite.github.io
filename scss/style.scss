@@ -1,0 +1,813 @@
+@import "mixins";
+
+$primrycolor :#0B3A42;
+$textcolor :rgb(27, 27, 27);
+$bgcolor :#edf7f2;
+$seconder: #fff;
+$bluecolor: #20C5BA;
+$ycolor: #f4c613;
+
+@font-face {
+    font-family: 'Vazir';
+    src: url('/font/Vazir.eot'), url('/font/Vazir.woff') format('woff');
+}
+
+
+
+* {
+    @include overal;
+    animation-duration: 3s;
+    animation-delay: 0s;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+
+    font-family: 'Vazir';
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+
+
+
+a {
+    text-decoration: none;
+}
+
+.header-meno {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    transition: all .5s;
+
+
+
+
+    nav {
+        display: flex;
+
+        align-items: center;
+
+        ul {
+            list-style: none;
+            display: flex;
+            margin-top: 8px;
+        }
+
+
+        li {
+
+            a {
+                text-decoration: none;
+                padding: 8px;
+                @include textstyle(1rem, bold, $seconder);
+                transition: .3s ease-in;
+                margin-right: 15px;
+
+
+                &:hover {
+                    background: $bluecolor;
+                    border-radius: 5px;
+
+                }
+            }
+
+
+        }
+
+        img {
+            width: 80px;
+            margin: 0 3rem 5px 0;
+
+
+        }
+    }
+}
+
+.heade-icon {
+    margin: auto 1rem;
+
+    a {
+        transition: all .15s ease-in;
+        color: $seconder;
+        margin-left: 2rem;
+
+        &:hover {
+            color: $textcolor;
+        }
+
+    }
+}
+
+/*معرفی*/
+.men {
+    background-image: linear-gradient((to bottom, rgba(49, 48, 48, 0.9), rgba(80, 79, 79, 0.8))), url("/img/bg-masthead.jpg") !important;
+    background-repeat: no-repeat;
+    background-position: top;
+    height: 100vh;
+    background-size: cover;
+    background-attachment: fixed;
+
+
+}
+
+.profile-men {
+    margin-top: 40%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid $seconder;
+
+    img {
+        width: 120px;
+        clip-path: circle();
+
+        box-shadow: 10px 10px 10px rgba(255, 251, 251, 0.5);
+
+        &:hover {
+            transform: scale(1.1);
+            transition: all .5s;
+        }
+    }
+
+    h2 {
+        color: $seconder;
+        text-align: center;
+        margin-top: 10px;
+
+
+
+    }
+
+    h4 {
+        @include textstyle(1rem, bold, $seconder);
+        overflow: hidden;
+        width: 12ch;
+        white-space: nowrap;
+        padding: 8px 0px;
+        border-radius: 3px;
+        text-align: center;
+        margin-top: 15px;
+
+        border-left: 1px solid $ycolor;
+        color: $bluecolor;
+        font-size: 1.2rem;
+        animation: typing 2s steps(9) infinite;
+    }
+
+    @keyframes typing {
+        0% {
+            width: 0ch;
+        }
+
+        50% {
+            width: 9ch;
+
+        }
+
+        100% {
+            width: 0ch;
+        }
+    }
+
+}
+
+.links {
+    margin-top: 10px;
+
+    a {
+        color: $seconder;
+        padding: .5rem;
+        transition: all .15s ease-in;
+
+        i {
+            font-size: 1.4rem;
+        }
+
+        &:hover {
+            color: $primrycolor;
+
+        }
+    }
+
+}
+
+/*توضیحات*/
+
+
+
+
+.paragraf-men {
+
+    margin-top: 22%;
+
+
+    h3 {
+        @include textstyle(2rem, bold, $seconder);
+
+        padding: 8px 0px 0px 100px;
+    }
+
+    p {
+        @include textstyle(1rem, bold, $seconder);
+        padding: 8px 0px 0px 100px;
+        text-align: justify;
+        line-height: 2rem;
+        color: rgba(242, 242, 247, 0.664);
+
+    }
+}
+
+hr.liner-hr {
+    background-color: $bluecolor;
+    width: 50%;
+    color: $bluecolor;
+    height: 0.1rem;
+    opacity: 1;
+
+}
+
+/*اطلاعات*/
+.number {
+
+    p {
+        @include textstyle(1rem, bold, $bgcolor);
+
+
+        span {
+            background: $bluecolor;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: $bgcolor;
+            margin-left: 15px;
+
+        }
+    }
+}
+
+/*مهارت های من*/
+.bg-maharat {
+    padding: 3rem 0;
+}
+
+.maharat {
+    text-align: center;
+    @include textstyle(2rem, bold, $bluecolor);
+
+}
+
+hr.about {
+    text-align: center;
+    height: .2rem;
+    background-color: $primrycolor;
+    color: $primrycolor;
+    width: 3.25rem;
+    margin: 10px auto;
+    opacity: 1;
+}
+
+.laptap {
+    background: $seconder;
+    padding: 15px 30px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    justify-content: center;
+    margin-top: 10px;
+
+    &:hover {
+        background: $ycolor;
+        transition: all .8s;
+
+        h5,
+        p {
+            color: $seconder;
+        }
+
+        i {
+            background: $bgcolor;
+            color: $ycolor;
+            transition: all .8s;
+            transform: translateY(-10px);
+        }
+
+    }
+
+    h5 {
+        text-align: center;
+        @include textstyle(1.2rem, bold, $primrycolor);
+       
+        margin-top: 1rem;
+    }
+
+    .laptap-i {
+        width: 100%;
+        text-align: center;
+    }
+
+    i {
+        font-size: x-large;
+        border-radius: 100%;
+        background: $ycolor;
+        padding: 20px;
+        color: $seconder;
+    }
+
+    p {
+        text-align: center;
+        @include textstyle(.8rem, bold, $primrycolor);
+        margin-top: 10px;
+        text-align: justify;
+        line-height: 1.7rem;
+    }
+}
+
+/*روزمه*/
+.cv-men {
+    background: #082429;
+    margin-top: 100px;
+    padding-bottom: 70px;
+
+
+    h2 {
+        @include textstyle(1.5rem, bold, $bluecolor);
+        margin-top: 3rem;
+
+    }
+
+    i {
+        color: $bgcolor;
+    }
+
+    .cv-tajrobah {
+
+        h4 {
+            text-align: start;
+            margin-top: 1.5rem;
+            @include textstyle(1.1rem, bold, $seconder);
+
+
+        }
+
+        span {
+            border: 1px solid $bluecolor;
+            padding: 1px;
+            @include textstyle(.9rem, bold, $bluecolor);
+        }
+
+        h5 {
+            margin-top: 1.5rem;
+            text-align: start;
+            @include textstyle(1rem, body, $ycolor);
+            
+        }
+
+        p {
+            
+            text-align: justify;
+            @include textstyle(1rem, body, $bgcolor);
+            margin: 5px auto;
+        }
+
+
+    }
+
+}
+
+/*تسلط های من*/
+.tasalot {
+    text-align: center;
+    padding-top: 50px;
+    @include textstyle(2rem, bold, $primrycolor);
+   
+
+    i {
+        color: $bluecolor;
+        margin-left: 10px;
+    }
+
+}
+
+
+.bar {
+    margin-top: 30px;
+
+
+    h6 {
+        @include textstyle(1rem, bold, $textcolor);
+
+    }
+
+    .progress {
+        background: $seconder;
+        border: 1px solid $bgcolor;
+        height: 30px;
+        overflow: visible;
+
+
+
+
+        .progress-bar {
+
+            background: #F9B91B;
+
+
+            span {
+                font-size: 16px;
+            }
+
+
+
+        }
+
+        .bar-languach {
+            width: 0;
+        }
+    }
+}
+
+
+
+
+
+/*نمونه کارها*/
+.job {
+    background: $seconder;
+    padding: 3rem 3rem 5rem 3rem;
+}
+
+.meno-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+ button {
+        @include textstyle(.9rem, bold, $textcolor);
+        border: none;
+        background: none;
+        outline: none;
+        margin: 1rem;
+    }
+
+    .active-list {
+        color: $bluecolor;
+        border-bottom: 2px solid $bluecolor;
+    }
+}
+
+
+.imges {
+    position: relative;
+    margin: 1rem auto;
+
+
+
+    &:hover {
+
+        img,
+        video {
+            transform: scale(1.1);
+            transition: transform .8s ease;
+
+
+        }
+
+    }
+
+
+    .projectt {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.562);
+        position: absolute;
+        opacity: 0;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        border-radius: 5px;
+
+
+        i {
+            color: $ycolor;
+            border: 1px solid $ycolor;
+            border-radius: 50%;
+            padding: 5px;
+            transform: translateY(20%);
+
+        }
+
+        a {
+            color: $ycolor;
+        }
+
+    }
+
+    .paragraff {
+        @include textstyle(1.2rem, bold, $bgcolor);
+        transition: all .5s;
+
+    }
+
+}
+
+.imges:hover .projectt {
+    opacity: 1;
+    transition: all .5s;
+
+    p {
+        transform: translateY(10px);
+    }
+}
+
+
+
+/*شمارنده*/
+.counters {
+    background-image: linear-gradient((to bottom, rgba(19, 19, 18, 0.9), rgba(36, 36, 35, 0.1))), url("/img/stats-bg.jpg");
+
+    background-position: center;
+    background-repeat: no-repeat;
+
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 100px 0;
+
+
+    .counter-item {
+        background: rgba(61, 68, 68, 0.8);
+        padding: 25px 50px;
+        margin-top: 10px;
+        border-radius: 5px;
+        text-align: center;
+        transition: all .4s ease-in;
+       
+        line-height: 24px;
+
+
+        i {
+            color: $ycolor;
+            font-size: 42px;
+            transition: all .4s ease-in;
+        }
+
+        h3 {
+            color: $seconder;
+            font-size: 32px;
+
+        }
+
+        p {
+            font-size: 20px;
+            color: $seconder;
+            font-weight: 400;
+        }
+
+        &:hover {
+            background: $ycolor;
+
+            i {
+                transform: translateY(-10px);
+                color: $textcolor;
+
+            }
+
+
+        }
+    }
+
+}
+
+
+/*نظرات */
+.test-silder {
+    background-color: $seconder;
+    color: $seconder;
+    text-align: justify;
+
+
+    .testmint {
+       
+        background: $ycolor;
+        padding: 3rem;
+    }
+
+
+    .atue {
+        img {
+            width: 100px;
+            height: 100px;
+            clip-path: circle();
+            display: inline;
+            text-align: start;
+        }
+
+        p {
+            line-height: 10px;
+            text-align: end;
+        }
+
+    }
+
+
+
+
+}
+
+#caruselbutton {
+    text-align: center;
+    padding: 5px;
+
+
+
+    .footdot {
+        width: 15px;
+        height: 15px;
+
+        background-color: #bbb;
+        cursor: pointer;
+        display: inline-block;
+        transition: background-color .6s;
+
+        &:hover {
+            background-color: #000;
+
+        }
+    }
+
+    .active-dots {
+        background-color: #000;
+    }
+
+}
+
+
+
+
+
+/*ارتباط با من*/
+.contact-me {
+    background-image: linear-gradient((to top, rgba(34, 34, 33, 0.1), rgba(121, 121, 118, 0.1))), url("/img/04.jpg");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+    background-attachment: fixed;
+
+    .form1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+        .contact-input {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+
+            input {
+                width: 100%;
+                padding: 10px 20px;
+                margin-top: 1rem;
+                background: none;
+                outline: none;
+                border-radius: 5px;
+                border: 1px solid $seconder;
+                @include textstyle(1.1rem, bold, $bgcolor);
+
+            }
+        }
+
+
+        textarea {
+            height: 11rem;
+            width: 50%;
+            margin: 23px 10px 10px 0;
+            padding: 10px;
+            background: none;
+            outline: none;
+            border: 1px solid $seconder;
+            @include textstyle(1.1rem, bold, $bgcolor);
+        }
+
+
+    }
+
+    button {
+        padding: 8px 20px;
+        font-size: 18px;
+    }
+
+
+}
+
+/*پایان*/
+
+.men-information {
+    display: flex;
+    justify-content: center;
+
+
+    i {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    h5 {
+        color: $textcolor;
+        font-size: 21px;
+
+    }
+
+    p {
+        color: $ycolor;
+        font-weight: 570;
+        text-transform: capitalize;
+
+    }
+
+    &:hover {
+
+        i {
+            color: $ycolor;
+            transform: translateX(15px);
+            transition: all .5s;
+        }
+
+        p {
+            color: $textcolor;
+            transition: all .5s;
+        }
+
+    }
+}
+
+
+
+/*برگشت به بالا*/
+.elevatorr {
+    border: 1px solid $textcolor;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    transform: translateY(80px);
+    position: fixed;
+    bottom: 20px;
+    transition: all .5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: $textcolor;
+
+    &:hover {
+        color: $bluecolor;
+        border-color: $bluecolor;
+    }
+
+
+
+
+}
+
+/*لود*/
+.first-load {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $seconder;
+    position: fixed;
+    z-index: 9999;
+
+    .load {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 8px solid $textcolor;
+        border-top-color: $ycolor;
+        animation: spin 1s linear infinite;
+
+    }
+
+    @keyframes spin {
+        100% {
+            transform: rotate(360deg);
+        }
+
+    }
+}
